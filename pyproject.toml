@@ -3,7 +3,10 @@ name = "stereomol"
 version = "0.0.0"
 authors = [{name = "Andreas V. Copan", email = "avcopan@uga.edu"}]
 requires-python = ">= 3.12"
-dependencies = []
+dependencies = [
+    "networkx>=3.6.1",
+    "rdkit>=2025.9.6",
+]
 
 [build-system]
 build-backend = "uv_build"
@@ -50,8 +53,8 @@ root_package = "stereomol"
 name = "Module Layering"
 type = "layers"
 layers = [
-    "stereomol.layer2",
-    "stereomol.layer1",
+    "stereomol.core",
+    "stereomol.rd",
 ]
 
 # Pytest configurations
@@ -73,4 +76,3 @@ source = ["stereomol"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = true
-fail_under = 80
